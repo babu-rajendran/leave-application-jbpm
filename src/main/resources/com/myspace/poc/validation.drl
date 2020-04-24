@@ -1,2 +1,21 @@
 package com.myspace.poc;
+import com.myspace.poc.LeaveApplication;
+
+rule "first-rule"
+ruleflow-group "leave-group"
+dialect "java"
+when
+$leaveApplication:LeaveApplication($leaveType: leaveType=="VACATION" && experience<2)
+then
+$leaveApplication.setLeaveStatus("REJECTED");
+end
+
+rule "second-rule"
+ruleflow-group "leave-group"
+dialect "java"
+when
+$leaveApplication:LeaveApplication($leaveBalance: leaveBalance < leavesApplied)
+then
+$leaveApplication.setLeaveStatus("REJECTED");
+end
 
