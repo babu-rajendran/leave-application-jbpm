@@ -9,18 +9,24 @@ public class LeaveApplication implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Employee Id")
+	@org.kie.api.definition.type.Label("Employee Id")
 	private java.lang.Integer employeeId;
-	@org.kie.api.definition.type.Label(value = "Leave Type")
+	@org.kie.api.definition.type.Label("Leave Type")
 	private java.lang.String leaveType;
-	@org.kie.api.definition.type.Label(value = "Leave Balance")
+	@org.kie.api.definition.type.Label("Leave Balance")
 	private java.lang.Integer leaveBalance;
-	@org.kie.api.definition.type.Label(value = "Leaves Applied")
+	@org.kie.api.definition.type.Label("Leaves Applied")
 	private java.lang.Integer leavesApplied;
-	@org.kie.api.definition.type.Label(value = "Years in company")
+	@org.kie.api.definition.type.Label("Years in company")
 	private java.lang.Integer experience;
-	@org.kie.api.definition.type.Label(value = "Leave Status")
+	@org.kie.api.definition.type.Label("Leave Status")
 	private java.lang.String leaveStatus;
+
+	@org.kie.api.definition.type.Label(value = "Application Validity")
+	private java.lang.Boolean applicationValidity;
+
+	@org.kie.api.definition.type.Label(value = "Approval Granted")
+	private java.lang.Boolean approvalGranted;
 
 	public LeaveApplication() {
 	}
@@ -73,16 +79,36 @@ public class LeaveApplication implements java.io.Serializable {
 		this.leaveStatus = leaveStatus;
 	}
 
+	public java.lang.Boolean getApplicationValidity() {
+		return this.applicationValidity;
+	}
+
+	public void setApplicationValidity(java.lang.Boolean applicationValidity) {
+		this.applicationValidity = applicationValidity;
+	}
+
+	public java.lang.Boolean getApprovalGranted() {
+		return this.approvalGranted;
+	}
+
+	public void setApprovalGranted(java.lang.Boolean approvalGranted) {
+		this.approvalGranted = approvalGranted;
+	}
+
 	public LeaveApplication(java.lang.Integer employeeId,
 			java.lang.String leaveType, java.lang.Integer leaveBalance,
 			java.lang.Integer leavesApplied, java.lang.Integer experience,
-			java.lang.String leaveStatus) {
+			java.lang.String leaveStatus,
+			java.lang.Boolean applicationValidity,
+			java.lang.Boolean approvalGranted) {
 		this.employeeId = employeeId;
 		this.leaveType = leaveType;
 		this.leaveBalance = leaveBalance;
 		this.leavesApplied = leavesApplied;
 		this.experience = experience;
 		this.leaveStatus = leaveStatus;
+		this.applicationValidity = applicationValidity;
+		this.approvalGranted = approvalGranted;
 	}
 
 }
